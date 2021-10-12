@@ -1,0 +1,350 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.default {
+  background: #003fff;
+  color: rgba(255, 255, 255, 0.6);
+}
+.golden {
+  background: #daa520;
+  color: rgba(255, 255, 255, 0.6);
+}
+.light {
+  background: #668cff;
+  color: rgba(255, 255, 255, 0.6);
+}
+.dark {
+  background: #002699;
+  color: rgba(255, 255, 255, 0.6);
+}
+.default {
+  background: #003fff;
+  color: rgba(255, 255, 255, 0.6);
+}
+.golden {
+  background: #daa520;
+  color: rgba(255, 255, 255, 0.6);
+}
+.light {
+  background: #668cff;
+  color: rgba(255, 255, 255, 0.6);
+}
+.dark {
+  background: #002699;
+  color: rgba(255, 255, 255, 0.6);
+}
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  width: 100%;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  overflow-y: scroll;
+}
+body {
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 1.8rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+h1 {
+  margin-top: 20px;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.875rem;
+}
+h6 {
+  font-size: 0.75rem;
+}
+p {
+  font-size: 1.8rem;
+  font-weight: 200;
+  line-height: 150%;
+}
+strong {
+  font-weight: 700;
+}
+ul {
+  margin: 0;
+  font-size: 1.6rem;
+  padding: 0 0 0 2rem;
+}
+a {
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+  transition: 0.3s color;
+}
+a:hover {
+  color: #edeeee;
+}
+button {
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+  transition: 0.3s color;
+  border: 2px solid #edeeee;
+  background-color: #003fff;
+  cursor: pointer;
+}
+button:hover {
+  color: #003fff;
+  background-color: #edeeee;
+}
+section.courses {
+  margin: 0 30px;
+}
+section.courses article {
+  display: grid;
+  justify-items: center;
+  margin: 70px 0;
+}
+section.courses article h2 {
+  margin-bottom: 30px;
+}
+section.courses article div#course-list {
+  justify-self: center;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+section.courses article div#course-list ul {
+  display: grid;
+  min-width: 200px;
+  padding: 10px;
+  border: 2px solid #edeeee;
+}
+section.courses article div#course-list ul li:nth-child(1) {
+  line-height: 0.8;
+}
+section.courses article div#course-list ul li:nth-child(3) {
+  line-height: 0.8;
+  margin-top: 5px;
+}
+section.courses article div#course-list ul :last-child {
+  justify-self: flex-end;
+}
+form#course-form {
+  display: grid;
+}
+form#course-form :last-child {
+  margin-top: 30px;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 670px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width: 540px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  section.courses article div#course-list {
+    grid-template-columns: 1fr;
+  }
+}
+.default {
+  background: #003fff;
+  color: rgba(255, 255, 255, 0.6);
+}
+.golden {
+  background: #daa520;
+  color: rgba(255, 255, 255, 0.6);
+}
+.light {
+  background: #668cff;
+  color: rgba(255, 255, 255, 0.6);
+}
+.dark {
+  background: #002699;
+  color: rgba(255, 255, 255, 0.6);
+}
+header {
+  margin: 0 auto;
+  max-width: 1335px;
+  width: 100%;
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  header.sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+  }
+}
+footer {
+  margin: 0 auto;
+  max-width: 1335px;
+  position: relative;
+  height: 400px;
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  font-size: 1.4rem;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10rem 2rem 5rem;
+}
