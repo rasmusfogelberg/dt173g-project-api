@@ -9,33 +9,31 @@
 
   <body class="default">
     <header class="header">
-      <h1>Assignment 5 - Webbutveckling III</h1>
-      <h2>REST-webbservices with PHP</h2>
+      <h1>DT173G Project assignment - Login</h1>
     </header>
 
-    <main class="content">
-      <section class="courses">
-        <article>
-          <h2>Course list</h2>
-          <div id="course-list"></div>
-        </article>
+    <main class="login">
+
+      <section>
 
         <article>
-          <h2>Submit form</h2>
 
           <form id="login-form" action="">
             <label for="username">Username:</label>
-            <input type="text" name="username" id="username" required />
+            <input type="text" name="username" id="username"/>
 
             <label for="password">Password:</label>
-            <input type="text" name="password" id="password" required />
+            <input type="text" name="password" id="password"/>
 
-            <button type="submit" id="login">Login</button>
+            <button type="submit" id="login"><a href="/work">Login</a></button>
           </form>
+
         </article>
+
       </section>
 
       <footer>
+
       </footer>
     </main>
 

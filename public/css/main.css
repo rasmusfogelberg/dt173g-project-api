@@ -286,6 +286,19 @@ main {
   max-width: 960px;
   margin: 0 auto;
 }
+
+main.login section {
+  margin-top: 20rem;
+}
+
+main.login section article form {
+  display: grid;
+}
+
+main.login section article form input {
+  margin-bottom: 20px;
+}
+
 @media only screen and (max-width: 670px) {
   h1 {
     font-size: 2.6rem;

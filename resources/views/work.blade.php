@@ -51,12 +51,6 @@
       </section>
 
       <footer>
-        <iframe
-          src="https://julafton.se/nedrakning-till-julafton.php"
-          width="280"
-          height="100%"
-          frameborder="0"
-        ></iframe>
       </footer>
     </main>
 
