@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::get('work', function () {
     return view('work');
 });
+
+Route::get('test', function() {
+    $users = \DB::table('users')->get();
+    return $users;
+});
