@@ -16,8 +16,8 @@
     <main class="content">
       <section class="courses">
         <article>
-          <h2>Course list</h2>
-          <div id="course-list"></div>
+          <h2>Experiences</h2>
+          <div id="data-list"></div>
         </article>
 
         <article>

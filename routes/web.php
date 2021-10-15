@@ -1,6 +1,17 @@
 <?php
 
+use App\Http\Controllers\ExperienceController;
 use Illuminate\Support\Facades\Route;
+
+/* 
+ * Place holder for controller code I am going to test.
+ * Have it commented out here for now so I can easily
+ * copy paste it later when I need it.
+use App/Http/Controllers/EducationController;
+use App/Http/Controllers/ProjectController;
+
+
+ *  */
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +28,7 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('work', function () {
-    return view('work');
-});
+Route::get('work', [ExperienceController::class, 'test']);
 
 Route::get('test', function() {
     $users = \DB::table('users')->get();
