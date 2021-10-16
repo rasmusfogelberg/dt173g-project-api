@@ -24,7 +24,7 @@ class ProjectFactory extends Factory
         return [
             'title' => $this->faker->bs(),
             'url' => $this->faker->url(),
-            'description' => $this->faker->realText()
+            'description' => $this->faker->text(1000),
         ];
     }
 }

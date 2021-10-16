@@ -28,7 +28,7 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('work', [ExperienceController::class, 'test']);
+Route::get('experiences', [ExperienceController::class, 'index']);
 
 Route::get('test', function() {
     $users = \DB::table('users')->get();

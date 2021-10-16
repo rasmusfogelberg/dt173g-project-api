@@ -39,6 +39,7 @@ class EducationFactory extends Factory
             'name' => Arr::random($education_names),
             'started_at' => $started_date->format('Y-m-d'),
             'ended_at' => $ended_date->format('Y-m-d'),
+            'description' => $this->faker->text(1000),
         ];
     }
 }
