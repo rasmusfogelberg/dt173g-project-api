@@ -30,8 +30,6 @@ class ExperienceFactory extends Factory
             'title' => $this->faker->jobTitle(),
             'started_at' => $started_date->format('Y-m-d'),
             'ended_at' => $ended_date->format('Y-m-d'),
-            'country' => $this->faker->country(),
-            'city' => $this->faker->city(),
             'description' => $this->faker->text(1000),
         ];
     }

@@ -319,10 +319,14 @@ section#list article div.edit-del-buttons {
 }
 
 section#list article div.edit-del-buttons button {
-  margin: 0 1rem;
+  margin: 2rem 1rem 0 1rem;
   min-width: 100px;
   border-radius: 5px;
   padding: 7px;
+}
+
+.del-button {
+  background-color:#aa2200;
 }
 
 form {

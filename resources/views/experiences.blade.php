@@ -20,40 +20,87 @@
         <article>
           <h2>Create work Experience</h2>
 
-          <form action="">
-            <label for="title">Title:<input type="text" name="title" id="title" required /></label>
+          @if(Session::has('success'))
+            <div class="success alert-success">
+              {{ session::get('success'); }}
+
+              @php
+                Session::forget('success');
+              @endphp
+            </div>
+          @endif
+
+          @if ($errors->any())
+            <div class="alert alert-danger">
+              <ul>
+                @foreach($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
+
+          <form method="POST" action="{{ route('experiences.store') }}">
+            @csrf
+
+            <label for="title">Title:
+              <input type="text" name="title" id="title" />
+              @if ($errors->has('title'))
+                <span class="text-error">{{ $errors->first('title') }}</span>
+              @endif
+            </label>
            
 
-            <label for="company">Company:<input type="text" name="company" id="company" required /></label>
+            <label for="company">Company:
+              <input type="text" name="company" id="company" />
+              @if ($errors->has('company'))
+                <span class="text-error">{{ $errors->first('company') }}</span>
+              @endif
+            </label>
             
 
-            <label for="started_at">Start date:<input
-              type="date"
-              name="started_at"
-              id="started_at"
-              required
-            /></label>
+            <label for="started_at">Start date:
+              <input
+                type="date"
+                name="started_at"
+                id="started_at"
+              />
+              @if ($errors->has('started_at'))
+                <span class="text-error">{{ $errors->first('started_at') }}</span>
+              @endif
+          </label>
             
             <fieldset>
-              <label for="ended_at">End date:<input
-                type="date"
-                name="ended_at"
-                id="ended_at"
-              /></label>
-              
+              <label for="ended_at">End date:
+                <input
+                  type="date"
+                  name="ended_at"
+                  id="ended_at"
+                />
+                @if ($errors->has('ended_at'))
+                  <span class="text-error">{{ $errors->first('ended_at') }}</span>
+                @endif
+              </label>
 
-              <label for="ongoing" id="ongoing-checkbox">Ongoing:<input 
-                type="checkbox" 
-                id="ongoing" 
-                name="ongoing"
-              /></label>
+              <label for="ongoing" id="ongoing-checkbox">Ongoing:
+                <input 
+                  type="checkbox"
+                  id="ongoing"
+                  name="ongoing"
+                />
+              </label>
             </fieldset>
 
-            <label for="description" id="desc-field">Description:<textarea
-              name="description"
-              id="description"
-              required
-            ></textarea></label>
+            <label for="description" id="desc-field">Description:
+              <textarea
+                name="description"
+                id="description"
+                required
+              ></textarea>
+              @if ($errors->has('description'))
+                <span class="text-error">{{ $errors->first('description') }}</span>
+              @endif
+            </label>
 
             <button type="submit" id="add-experience">Submit</button>
             
@@ -67,13 +114,7 @@
             <article class="post-list">
               <h3>{{ $experience->title }} - {{ $experience->company }}</h3>
               <h4>{{ $experience->started_at }} - 
-                <?php
-                  $end_date = ($experience->ended_at > 1) ? $experience->ended_at : 'Ongoing';
-                  echo $end_date;
-                  ?>
-                </h4>
-              <h4>{{ $experience->country }}, {{ $experience->city }}</h4>
-              <h5>Description</h5>
+                {{ ($experience->ended_at && !$experience->ongoing) ? $experience->ended_at : 'Ongoing' }}
               <p>{{ $experience->description }}</p>
               <div class="edit-del-buttons"><button class="edit-button">Edit</button>
             <button class="del-button">Delete</button></div>

@@ -25,7 +25,7 @@
             <label for="password">Password:</label>
             <input type="text" name="password" id="password"/>
 
-            <button type="submit" id="login"><a href="/work">Login</a></button>
+            <button type="submit" id="login"><a href="/experiences">Login</a></button>
           </form>
 
         </article>

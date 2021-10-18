@@ -19,8 +19,6 @@ class CreateExperiencesTable extends Migration
             $table->string('title');
             $table->date('started_at');
             $table->date('ended_at')->nullable();
-            $table->string('country');
-            $table->string('city');
             $table->boolean('ongoing')->nullable()->default(false);
             $table->longText('description');
             $table->timestamps();
