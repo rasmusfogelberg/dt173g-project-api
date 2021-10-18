@@ -11,8 +11,11 @@ class ExperienceController extends Controller
 {
     /**
      * Display listing of the resource
+     * 
+     * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index() 
+    {
         $experiences = Experience::orderBy('started_at', 'DESC')->paginate(3);
 
         return view('experiences.index', compact('experiences'));
@@ -20,6 +23,7 @@ class ExperienceController extends Controller
 
     /** 
      * Store a newly created resource in storage.
+     * 
      * @param  \Illuminate\Http\Request  $request
     */
     public function store(Request $request) 

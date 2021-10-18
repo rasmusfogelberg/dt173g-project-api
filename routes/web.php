@@ -21,6 +21,8 @@ Route::group(['middleware' => 'auth'], function() {
     })->name('dashboard');
 
     Route::resource('experiences', ExperienceController::class);
+
+    Route::resource('educations', EducationController::class);
 });
 
 require __DIR__.'/auth.php';

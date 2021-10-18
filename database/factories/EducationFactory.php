@@ -31,11 +31,19 @@ class EducationFactory extends Factory
             'Food Health & Safety'
         ];
 
+        $institutions = [
+            'Malmö University',
+            'Mid Sweden University',
+            'Kristianstad University',
+            'School of Rock',
+            'Chas University'
+        ];
+
         $started_date = Carbon::instance($this->faker->dateTimeBetween('-1 years','+1 years'));
         $ended_date = (clone $started_date)->addDays(random_int(0, 14));
 
         return [
-            'location' => $this->faker->city(),
+            'institution' => Arr::random($institutions),
             'name' => Arr::random($education_names),
             'started_at' => $started_date->format('Y-m-d'),
             'ended_at' => $ended_date->format('Y-m-d'),
