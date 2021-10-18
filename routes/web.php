@@ -1,15 +1,8 @@
 <?php
 
 use App\Http\Controllers\ExperienceController;
-use Illuminate\Support\Facades\Route;
 
-/* 
- * Place holder for controller code I am going to test.
- * Have it commented out here for now so I can easily
- * copy paste it later when I need it.
- - use App/Http/Controllers/EducationController;
- - use App/Http/Controllers/ProjectController;
- */
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::resource('experiences', ExperienceController::class);
 });
 
-// Route::get('experiences', [ExperienceController::class, 'index']);
-
-Route::resource('experiences', ExperienceController::class)->only([
-    'index', 'store'
-]);
+require __DIR__.'/auth.php';
