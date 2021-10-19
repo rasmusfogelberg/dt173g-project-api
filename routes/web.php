@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\EducationController;
+use App\Http\Controllers\ProjectController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +25,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('experiences', ExperienceController::class);
 
     Route::resource('educations', EducationController::class);
+
+    Route::resource('projects', ProjectController::class);
 });
 
 require __DIR__.'/auth.php';

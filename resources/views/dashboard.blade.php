@@ -11,10 +11,15 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in!
 
-                    
                     <div class="flex items-center mt-4">
                         <a class="text-blue-600 visited:text-purple-600" href="{{ route('experiences.create') }}">
                             {{ __('Create new experience') }}
+                        </a>
+                    </div>
+
+                    <div class="flex items-center mt-4">
+                        <a class="text-blue-600 visited:text-purple-600" href="{{ route('educations.create') }}">
+                            {{ __('Create new education') }}
                         </a>
                     </div>
                 </div>

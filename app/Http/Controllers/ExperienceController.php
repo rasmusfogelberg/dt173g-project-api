@@ -21,14 +21,25 @@ class ExperienceController extends Controller
         return view('experiences.index', compact('experiences'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('experiences.create');
+    }
+
     /** 
      * Store a newly created resource in storage.
      * 
      * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
     */
     public function store(Request $request) 
     {
-        // Actually store something
+        // Validateds the input from the from and marks whats required
 
         $validated = $request->validate([
             'title' => 'required',
@@ -48,14 +59,11 @@ class ExperienceController extends Controller
         return redirect()->route('experiences.index')->with('success', 'Created experience successfully');
     }
 
-    public function create()
-    {
-        return view('experiences.create');
-    }
-
     /** 
      * Show the form for editing the specified resource.
+     * 
      * @param  App\Models\Experience  $experience
+     * @return \Illuminate\Http\Response
     */
     public function edit(Experience $experience)
     {

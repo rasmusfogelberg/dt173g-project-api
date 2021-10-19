@@ -28,7 +28,7 @@ class EducationController extends Controller
      */
     public function create()
     {
-        //
+        return view('educations.create');
     }
 
     /**
@@ -39,7 +39,24 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validateds the input from the from and marks whats required
+
+        $validated = $request->validate([
+            'name' => 'required',
+            'institution' => 'required',
+            'started_at' => 'required|date',
+            'ended_at' => 'nullable|date|after_or_equal:started_at',
+            'ongoing' => 'required_if:ended_at, null',
+            'description' => 'required',
+        ]);
+
+        // If ended_at is null, set ongoing to true before storing
+        if (is_null($validated['ended_at'])) {
+            $validated['ongoing'] = 1;
+        }
+
+        $education = Education::create($validated);
+        return redirect()->route('educations.index')->with('success', 'Created education successfully');
     }
 
     /**
@@ -50,7 +67,7 @@ class EducationController extends Controller
      */
     public function show($id)
     {
-        //
+        // TODO: look up if I will need this to shows single "post" for client webpage
     }
 
     /**
@@ -59,9 +76,9 @@ class EducationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Education $education)
     {
-        //
+        return view('educations.edit', compact('education'));
     }
 
     /**
@@ -71,9 +88,20 @@ class EducationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Education $education)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'institution' => 'required',
+            'started_at' => 'required|date',
+            'ended_at' => 'nullable|date|after_or_equal:started_at',
+            'ongoing' => 'required_if:ended_at, null',
+            'description' => 'required',
+        ]);
+
+        $education->update($request->all());
+
+        return redirect()->route('educations.index')->with('success', 'Education successfully updated');
     }
 
     /**
@@ -82,8 +110,12 @@ class EducationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Education $education)
     {
-        //
+        $education->delete();
+
+
+        
+        return redirect()->route('educations.index')->with('success', "The education '$education->name' successfully deleted");
     }
 }
