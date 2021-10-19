@@ -56,7 +56,7 @@ class EducationController extends Controller
         }
 
         $education = Education::create($validated);
-        return redirect()->route('educations.index')->with('success', 'Created education successfully');
+        return redirect()->route('educations.index')->with('success', "Education '$education->name' successfully created");
     }
 
     /**
@@ -101,12 +101,13 @@ class EducationController extends Controller
 
         $education->update($request->all());
 
-        return redirect()->route('educations.index')->with('success', 'Education successfully updated');
+        return redirect()->route('educations.index')->with('success', "Education '$education->name' successfully updated");
     }
 
     /**
      * Remove the specified resource from storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -114,8 +115,6 @@ class EducationController extends Controller
     {
         $education->delete();
 
-
-        
-        return redirect()->route('educations.index')->with('success', "The education '$education->name' successfully deleted");
+        return redirect()->route('educations.index')->with('success', "The education '$education->name' was successfully deleted");
     }
 }

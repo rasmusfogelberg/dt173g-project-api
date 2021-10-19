@@ -56,7 +56,7 @@ class ExperienceController extends Controller
         }
     
         $experience = Experience::create($validated);
-        return redirect()->route('experiences.index')->with('success', 'Created experience successfully');
+        return redirect()->route('experiences.index')->with('success', "Experience '$experience->name' successfully created");
     }
 
     /** 
@@ -70,6 +70,12 @@ class ExperienceController extends Controller
         return view('experiences.edit', compact('experience'));
     }
 
+        /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, Experience $experience)
     {
         $request->validate([
@@ -83,13 +89,19 @@ class ExperienceController extends Controller
 
         $experience->update($request->all());
 
-        return redirect()->route('experiences.index')->with('success', 'Experience successfully updated');
+        return redirect()->route('experiences.index')->with('success', "Experience '$experience->name' successfully updated");
     }
 
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(Experience $experience)
     {
         $experience->delete();
 
-        return redirect()->route('experiences.index')->with('success', 'Experience successfully deleted');
+        return redirect()->route('experiences.index')->with('success', "Experience '$experience->name' successfully deleted");
     }
 }

@@ -11,7 +11,7 @@
         <div class="p-6 bg-white border-b border-gray-200">
           <x-validation-errors />
           <x-success-message />  
-          @if (!is_null($educations))
+
           <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -86,8 +86,6 @@
               </div>
             </div>
           </div>
-          @endif
-          <p class="text-center mt-20 font-bold">There is nothing here yet!</p>
         </div>
       </div>
     </div>

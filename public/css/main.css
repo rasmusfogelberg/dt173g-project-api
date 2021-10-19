@@ -1,4 +1,4 @@
-html,
+/* html,
 body,
 div,
 span,
@@ -274,7 +274,6 @@ button {
   padding: 7px;
 }
 
-
 button:hover {
   color: #003fff;
   background-color: #edeeee;
@@ -326,20 +325,18 @@ section#list article div.edit-del-buttons button {
 }
 
 .del-button {
-  background-color:#aa2200;
+  background-color: #aa2200;
 }
 
 form {
   width: 100%;
-  display: grid; 
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  
 }
 
 form label {
   display: block;
-
 }
 
 form input {
@@ -363,7 +360,7 @@ form fieldset label {
 }
 
 #ongoing-checkbox input {
-  align-self:flex-end;
+  align-self: flex-end;
   justify-self: flex-start;
   margin-bottom: 5px;
   width: 10%;
@@ -465,4 +462,4 @@ footer {
   justify-content: center;
   padding: 10rem 2rem 5rem;
 }
-
+ */
