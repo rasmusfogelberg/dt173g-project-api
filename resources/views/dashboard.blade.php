@@ -22,6 +22,12 @@
                             {{ __('Create new education') }}
                         </a>
                     </div>
+
+                    <div class="flex items-center mt-4">
+                        <a class="text-blue-600 visited:text-purple-600" href="{{ route('projects.create') }}">
+                            {{ __('Create new project') }}
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
