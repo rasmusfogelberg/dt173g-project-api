@@ -49,7 +49,7 @@ class EducationController extends Controller
             'ongoing' => 'required_if:ended_at, null',
             'description' => 'required',
         ]);
-
+  
         // If ended_at is null, set ongoing to true before storing
         if (is_null($validated['ended_at'])) {
             $validated['ongoing'] = 1;
