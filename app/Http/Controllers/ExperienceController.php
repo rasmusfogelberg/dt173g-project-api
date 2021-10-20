@@ -92,7 +92,7 @@ class ExperienceController extends Controller
         return redirect()->route('experiences.index')->with('success', "Experience '$experience->name' successfully updated");
     }
 
-        /**
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

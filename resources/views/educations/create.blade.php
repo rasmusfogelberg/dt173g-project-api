@@ -20,24 +20,24 @@
             
             <div>
                 <x-label for="name" :value="__('Name')" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ old('name') }}"/>
             </div>
 
             <div>
                 <x-label for="institution" :value="__('Institution')" />
-                <x-input id="institution" class="block mt-1 w-full" type="text" name="institution" />
+                <x-input id="institution" class="block mt-1 w-full" type="text" name="institution" value="{{ old('institution') }}" />
             </div>
 
             <div>
                 <x-label for="started_at" :value="__('Started At')" />
-                <x-input id="started_at" class="block mt-1 w-full" type="date" name="started_at" />
+                <x-input id="started_at" class="block mt-1 w-full" type="date" name="started_at" value="{{ old('started_at') }}"/>
             </div>
 
             <!-- TODO: fix so that unchecking the ongoing checkbox, shows end-date field and vice versa -->
 
             <div>
                 <x-label for="ended_at" :value="__('Ended At')" />
-                <x-input id="ended_at" class="block mt-1 mb-1 w-full" type="date" name="ended_at" />
+                <x-input id="ended_at" class="block mt-1 mb-1 w-full" type="date" name="ended_at" value="{{ old('ended_at') }}" />
 
                 <div class="flex items-center">
                   <x-label for="ongoing" :value="__('Ongoing')" />
@@ -55,7 +55,7 @@
           
           <div>
             <x-label for="description" :value="__('Description')" />
-            <textarea id="description" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" rows="10" name="description"></textarea>
+            <textarea id="description" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" rows="10" name="description" >{{ old('description') }}</textarea>
           </div>
 
 

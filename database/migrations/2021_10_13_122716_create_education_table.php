@@ -18,7 +18,7 @@ class CreateEducationTable extends Migration
             $table->string('institution');
             $table->string('name');
             $table->date('started_at');
-            $table->date('ended_at');
+            $table->date('ended_at')->nullable()->default(null);
             $table->boolean('ongoing')->nullable()->default(false);
             $table->longText('description');
             $table->timestamps();

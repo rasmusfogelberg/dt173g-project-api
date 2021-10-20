@@ -40,6 +40,9 @@ class EducationController extends Controller
     public function store(Request $request)
     {
         // Validateds the input from the from and marks whats required
+        if ($request['ended_at'] == null) {
+            $request['ended_at'] = null;
+        }
 
         $validated = $request->validate([
             'name' => 'required',
@@ -55,6 +58,7 @@ class EducationController extends Controller
             $validated['ongoing'] = 1;
         }
 
+        
         $education = Education::create($validated);
         return redirect()->route('educations.index')->with('success', "Education '$education->name' successfully created");
     }
@@ -99,8 +103,13 @@ class EducationController extends Controller
             'description' => 'required',
         ]);
 
-        $education->update($request->all());
+        // If ended_at is null, set ongoing to true before storing
+        if (is_null($request['ended_at'])) {
+            $request['ongoing'] = 1;
+        }
 
+        $education->update($request->all());
+      
         return redirect()->route('educations.index')->with('success', "Education '$education->name' successfully updated");
     }
 
