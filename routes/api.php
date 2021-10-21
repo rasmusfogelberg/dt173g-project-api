@@ -1,6 +1,14 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Resources\EducationCollection;
+use App\Http\Resources\EducationResource;
+use App\Http\Resources\ExperienceCollection;
+use App\Http\Resources\ExperienceResource;
+use App\Http\Resources\ProjectCollection;
+use App\Http\Resources\ProjectResource;
+use App\Models\Education;
+use App\Models\Project;
+use App\Models\Experience;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +22,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/experiences', function () {
+    return new ExperienceCollection(Experience::all());
+});
+
+Route::get('/experiences/{id}', function ($id) {
+    return new ExperienceResource(Experience::findOrFail($id));
+});
+
+Route::get('/projects', function () {
+    return new ProjectCollection(Project::all());
+});
+
+Route::get('/projects/{id}', function ($id) {
+    return new ProjectResource(Project::findOrFail($id));
+});
+
+Route::get('/educations', function () {
+    return new EducationCollection(Education::all());
+});
+
+Route::get('/educations/{id}', function ($id) {
+    return new EducationResource(Education::findOrFail($id));
 });
