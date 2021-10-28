@@ -50,18 +50,7 @@ class ProjectController extends Controller
         $project = Project::create($validated);
         return redirect()->route('projects.index')->with('success', "Project '$project->title' successfully created");
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        // TODO: look up if I will need this to shows single "post" for client webpage
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      *

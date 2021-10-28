@@ -39,8 +39,13 @@ class ExperienceController extends Controller
     */
     public function store(Request $request) 
     {
-        // Validateds the input from the from and marks whats required
 
+        // If ended_at is null it is set to null
+        if ($request['ended_at'] == null) {
+            $request['ended_at'] = null;
+        }
+
+        // Validateds the input from the from and marks whats required
         $validated = $request->validate([
             'title' => 'required',
             'company' => 'required',

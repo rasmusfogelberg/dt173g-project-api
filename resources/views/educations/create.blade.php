@@ -33,8 +33,6 @@
                 <x-input id="started_at" class="block mt-1 w-full" type="date" name="started_at" value="{{ old('started_at') }}"/>
             </div>
 
-            <!-- TODO: fix so that unchecking the ongoing checkbox, shows end-date field and vice versa -->
-
             <div>
                 <x-label for="ended_at" :value="__('Ended At')" />
                 <x-input id="ended_at" class="block mt-1 mb-1 w-full" type="date" name="ended_at" value="{{ old('ended_at') }}" />

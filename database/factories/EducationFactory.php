@@ -23,6 +23,7 @@ class EducationFactory extends Factory
      */
     public function definition()
     {
+        // Array for example educaitons
         $education_names = [
             'Web Development', 
             'Law', 
@@ -31,6 +32,7 @@ class EducationFactory extends Factory
             'Food Health & Safety'
         ];
 
+        // Array for example institutions
         $institutions = [
             'Malmö University',
             'Mid Sweden University',
@@ -39,6 +41,7 @@ class EducationFactory extends Factory
             'Chas University'
         ];
 
+        // To make sure that the ended_at date is later than the started_ at and randomize the time between
         $started_date = Carbon::instance($this->faker->dateTimeBetween('-1 years','+1 years'));
         $ended_date = (clone $started_date)->addDays(random_int(0, 14));
 

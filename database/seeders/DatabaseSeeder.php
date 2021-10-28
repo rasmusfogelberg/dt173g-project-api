@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // The number sets how many examples should be created
         \App\Models\User::factory(3)->create();
         \App\Models\Experience::factory(5)->create();
         \App\Models\Project::factory(5)->create();
