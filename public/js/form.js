@@ -18,7 +18,6 @@ let isChecked = () => {
 }
   
 if (ongoingEl) {
-ongoingEl.addEventListener("click", isChecked);
+  ongoingEl.addEventListener("click", isChecked);
+  window.addEventListener("load", isChecked);
 }
-
-

@@ -40,7 +40,8 @@ class ExperienceController extends Controller
     public function store(Request $request) 
     {
 
-        // If ended_at is null it is set to null
+        // If ended_at is null it needs to be explcitily set to null
+        // This is because Laravel will omit null values
         if ($request['ended_at'] == null) {
             $request['ended_at'] = null;
         }
