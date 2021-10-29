@@ -1,3 +1,23 @@
+# DT173G - Project Assignment
+
+## API and Admin-dashboard
+
+In this repo the API and Admin-dashboard is available. This part was created with Laravel, hence the Laravel information below if anyone is more intrested in it.
+
+- Link: [How to install Laravel](https://laravel.com/docs/8.x/installation) 
+
+To be able to use this repo both PHP and Composer is needed. 
+
+- Link: [How to install Composer](https://getcomposer.org/doc/00-intro.md)
+- Link: [How to install PHP](https://www.php.net/manual/en/install.php)
+
+Sail, which comes with Laravel, can be used for local development.
+
+- Link: [Documentation for Sail](https://laravel.com/docs/8.x/sail)
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
